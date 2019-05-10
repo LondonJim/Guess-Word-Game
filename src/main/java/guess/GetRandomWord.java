@@ -22,7 +22,6 @@ public class GetRandomWord {
   public String getWord() {
     Elements word = getDocumentHelper().select("#random_word");
     randomWord = word.text();
-    System.out.println(randomWord);
     return randomWord;
   }
 

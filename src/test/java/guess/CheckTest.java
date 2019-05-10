@@ -27,4 +27,14 @@ public class CheckTest {
 
       assertEquals(Arrays.toString(charsTestReturn), Arrays.toString(check.guessChars('d')));
     }
+
+    // #displayWord
+    @Test public void testDisplayWordReturnsString() {
+      Check check = new Check("test");
+      check.convertWord();
+      check.guessChars('t');
+      String displayReturn = "t**t";
+
+      assertEquals(displayReturn, check.displayWord());
+    }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Check {
 
   private String word;
+  private String displayWord;
   private String guesses;
   private char[] wordChars;
   private char[] arrayGuesses;
@@ -31,6 +32,20 @@ public class Check {
     }
     arrayGuesses = guesses.toCharArray();
     return arrayGuesses;
+  }
+
+  public String displayWord() {
+    displayWord = "";
+    for (int i = 0; i < wordChars.length; i++) {
+      for (int j = 0; j < arrayGuesses.length; j++) {
+        if (wordChars[i] == arrayGuesses[j]) {
+          displayWord += wordChars[i];
+        } else {
+          displayWord += "*";
+        }
+      }
+    }
+    return displayWord;
   }
 
 }
