@@ -37,4 +37,25 @@ public class CheckTest {
 
       assertEquals(displayReturn, check.displayWord());
     }
+
+    // #verifyWordToGuesses
+    @Test public void testVerifyWordToGuessesReturnsFalseBoolean() {
+      Check check = new Check("test");
+      check.convertWord();
+      check.guessChars('t');
+      check.displayWord();
+
+      assertEquals(false, check.verifyWordToGuesses());
+    }
+
+    @Test public void testVerifyWordToGuessesReturnsTrueBoolean() {
+      Check check = new Check("test");
+      check.convertWord();
+      check.guessChars('t');
+      check.guessChars('e');
+      check.guessChars('s');
+      check.displayWord();
+
+      assertEquals(true, check.verifyWordToGuesses());
+    }
 }

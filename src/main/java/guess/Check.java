@@ -1,6 +1,7 @@
 package guess;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Check {
 
@@ -9,6 +10,7 @@ public class Check {
   private String guesses;
   private char[] wordChars;
   private char[] arrayGuesses;
+  private char[] displayWordArray;
 
   public Check(String randomWord) {
     this.word = randomWord.toLowerCase();
@@ -17,10 +19,13 @@ public class Check {
   public void checkWord(char guess) {
     convertWord();
     guessChars(guess);
+    displayWord();
+    verifyWordToGuesses();
   }
 
   public char[] convertWord() {
     wordChars = word.toCharArray();
+    displayWordArray = new char[wordChars.length];
     return wordChars;
   }
 
@@ -39,13 +44,21 @@ public class Check {
     for (int i = 0; i < wordChars.length; i++) {
       for (int j = 0; j < arrayGuesses.length; j++) {
         if (wordChars[i] == arrayGuesses[j]) {
-          displayWord += wordChars[i];
+          displayWordArray[i] = wordChars[i];
         } else {
-          displayWord += "*";
+          if (displayWordArray[i] == 0) {
+            displayWordArray[i] = '*';
+          }
         }
       }
     }
+    displayWord = new String(displayWordArray);
+
     return displayWord;
+  }
+
+  public boolean verifyWordToGuesses() {
+    return (displayWord.equals(word));
   }
 
 }
