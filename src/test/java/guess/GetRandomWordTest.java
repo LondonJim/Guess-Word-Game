@@ -13,13 +13,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class AppTest {
+public class GetRandomWordTest {
 
     @Test public void testgetWordReturnsString() {
       Document document = Jsoup.parse("<html><head></head><body><div id='random_word'>test</div></body><html>");
-      App appMock = spy(App.class);
-      when(appMock.getDocumentHelper()).thenReturn(document);
+      GetRandomWord getRandomWordMock = spy(GetRandomWord.class);
+      when(getRandomWordMock.getDocumentHelper()).thenReturn(document);
 
-      assertEquals("test", appMock.getWord());
+      assertEquals("test", getRandomWordMock.getWord());
     }
 }

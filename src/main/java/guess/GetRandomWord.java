@@ -6,12 +6,18 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class App {
+public class GetRandomWord {
 
-  private String url = "http://www.randomword.com";
-  private String randomWord = "";
+  private String url;
+  private String randomWord;
 
-  public App() {}
+  public GetRandomWord() {
+    this.url = "https://www.randomword.com";
+  }
+
+  public GetRandomWord(String url) {
+    this.url = url;
+  }
 
   public String getWord() {
     Elements word = getDocumentHelper().select("#random_word");
