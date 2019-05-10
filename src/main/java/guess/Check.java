@@ -14,10 +14,10 @@ public class Check {
 
   public Check(String randomWord) {
     this.word = randomWord.toLowerCase();
+    convertWord();
   }
 
   public void checkWord(char guess) {
-    convertWord();
     guessChars(guess);
     displayWord();
     verifyWordToGuesses();
