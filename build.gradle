@@ -24,10 +24,10 @@ dependencies {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'guess.App'
+                'Main-Class': 'guess.GuessGame'
         )
     }
     from {configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
-mainClassName = 'guess.App'
+mainClassName = 'guess.GuessGame'

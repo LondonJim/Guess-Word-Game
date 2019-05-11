@@ -34,5 +34,5 @@ public class GetRandomWord {
     }
     return doc;
   }
-  
+
 }

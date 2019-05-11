@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 public class Check {
 
-  private String word;
-  private String displayWord;
+  private String word = "";
+  private String displayWord = "";
   private String guesses;
   private char[] wordChars;
-  private char[] arrayGuesses;
+  private char[] arrayGuesses = {' '};
   private char[] displayWordArray;
 
   public Check(String randomWord) {
@@ -17,10 +17,9 @@ public class Check {
     convertWord();
   }
 
-  public void checkWord(char guess) {
-    guessChars(guess);
-    displayWord();
-    verifyWordToGuesses();
+  public String checkWord(char guessChar) {
+    guessChars(guessChar);
+    return displayWord();
   }
 
   public char[] convertWord() {
