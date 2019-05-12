@@ -9,7 +9,7 @@ public class Check {
   private String displayWord = "";
   private String guesses;
   private char[] wordChars;
-  private char[] arrayGuesses = {' '};
+  private char[] arrayGuesses;
   private char[] displayWordArray;
 
   public Check(String randomWord) {
@@ -60,4 +60,8 @@ public class Check {
     return (displayWord.equals(word));
   }
 
+  public String initialDisplayWord() {
+    String str = "*";
+    return str.repeat(word.length());
+  }
 }

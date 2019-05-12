@@ -31,7 +31,7 @@ public class GuessGame {
   }
 
   private void play() throws IOException {
-    System.out.println(check.displayWord());
+    System.out.println(check.initialDisplayWord());
     gameLoop();
     System.out.println("You win");
   }

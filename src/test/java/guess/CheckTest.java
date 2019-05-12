@@ -58,4 +58,15 @@ public class CheckTest {
 
       assertEquals(true, check.verifyWordToGuesses());
     }
+
+    // #initialDisplayWord
+    @Test public void testInitialDisplayWordReturnsCorrectString() {
+      Check check = new Check("test");
+      assertEquals("****", check.initialDisplayWord());
+    }
+
+    @Test public void testInitialDisplayWordReturnsCorrectLongerString() {
+      Check check = new Check("testing");
+      assertEquals("*******", check.initialDisplayWord());
+    }
 }
