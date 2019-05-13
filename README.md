@@ -1,6 +1,6 @@
 # Guess Word Game
 
-Window pop up game. Enter character until the word is completed and try to keep the total guesses low. Points are added for every wrong guess.
+Window pop up game. Enter letters until the word is complete whilst trying to keep the total guesses low. Points are added for every wrong guess.
 
 To keep the game fresh I scrape the word and the meaning from a website using JSoup to grab the text from the relevant elements.
 
@@ -51,6 +51,10 @@ I want to be able to enter a letter
 As a player,
 So I know how well I'm doing,
 I want the correct letters revealed
+
+As a player,
+So I do not repeat a letter,
+I want the list of past guesses displayed
 
 As a player,
 So there is an end to the game,
