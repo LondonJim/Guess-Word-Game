@@ -108,6 +108,7 @@ public class GuessGame {
     button.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         try {
+          frame.dispose();
           newGame();
         } catch (IOException error){
           error.printStackTrace();
