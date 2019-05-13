@@ -26,22 +26,22 @@ public class GuessGame {
 
   public static void main(String[] args) throws IOException {
     GuessGame guessGame = new GuessGame();
+    guessGame.newGame();
   }
 
   public GuessGame() throws IOException {
-    newGame();
+  }
+
+  public GuessGame(ScrapeRandomWord scrapeRandomWord) throws IOException {
+    this.scrapeRandomWord = scrapeRandomWord;
   }
 
   public void newGame() throws IOException {
     this.scrapeRandomWord = new ScrapeRandomWord();
     getConvertWord();
+    check = new Check(randomWord);
     frame = new JFrame("Word Game");
     displayGame();
-  }
-
-  public GuessGame(ScrapeRandomWord scrapeRandomWord) throws IOException {
-    this.scrapeRandomWord = scrapeRandomWord;
-    getConvertWord();
   }
 
   private void displayGame() throws IOException {
@@ -52,7 +52,6 @@ public class GuessGame {
 
     Container container = frame.getContentPane();
     container.setLayout(new BorderLayout());
-    // container.setComponentOrientation(java.awt.ComponentOrientation.RIGHT_TO_LEFT);
 
     JLabel displayWord = new JLabel();
     JLabel displayLower = new JLabel();
@@ -70,7 +69,7 @@ public class GuessGame {
     displayCenter.setHorizontalAlignment(JLabel.CENTER);
     displayCenter.setText("Enter Letter");
 
-    JButton button = new JButton("Restart");
+    JButton button = new JButton("Play Again");
     button.setFont(new Font("Courier", Font.BOLD,20));
 
     keyListener = new KeyListener() {
@@ -127,7 +126,6 @@ public class GuessGame {
     scrapeRandomWord.execute();
     randomWordMeaning = scrapeRandomWord.getRandomWordMeaning();
     randomWord = scrapeRandomWord.getRandomWord();
-    check = new Check(randomWord);
   }
 
   private void removeListener() {
