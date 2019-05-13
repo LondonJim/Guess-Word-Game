@@ -54,11 +54,15 @@ I want the correct letters revealed
 
 As a player,
 So there is an end to the game,
-I want a winning message on guessing the whole word
+I want a message on guessing the whole word
 
 As a player,
-So the game is not easy,
-I want my number of guesses limited
+So I can know more about the word,
+I want the meaning of the word revealed
+
+As a player,
+So I can play again
+I want a restart button
 ```
 
 ## Screen Shots
