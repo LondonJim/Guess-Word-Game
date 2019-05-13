@@ -22,20 +22,19 @@ public class ScrapeRandomWord {
   }
 
   public void execute() {
-    Elements word = getDocumentHelper().select("#random_word");
-    Elements wordMeaning = getDocumentHelper().select("#random_word_definition");
+    doc = getDocumentHelper();
+    Elements word = doc.select("#random_word");
+    Elements wordMeaning = doc.select("#random_word_definition");
     randomWordMeaning = wordMeaning.text();
     randomWord = word.text();
   }
 
   public Document getDocumentHelper() {
-    if (doc == null) {
-      try {
-        doc = Jsoup.connect(url).get();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    };
+    try {
+      doc = Jsoup.connect(url).get();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
     return doc;
   }
 

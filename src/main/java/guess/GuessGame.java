@@ -52,7 +52,7 @@ public class GuessGame {
 
     Container container = frame.getContentPane();
     container.setLayout(new BorderLayout());
-    container.setComponentOrientation(java.awt.ComponentOrientation.RIGHT_TO_LEFT);
+    // container.setComponentOrientation(java.awt.ComponentOrientation.RIGHT_TO_LEFT);
 
     JLabel displayWord = new JLabel();
     JLabel displayLower = new JLabel();

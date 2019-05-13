@@ -2,7 +2,7 @@
 
 Window pop up game. Enter letters until the word is complete whilst trying to keep the total guesses low. Points are added for every wrong guess.
 
-To keep the game fresh I scrape the word and the meaning from a website using JSoup to grab the text from the relevant elements.
+To keep the game fresh I scrape the word used and also the meaning from a website using JSoup to grab the text from the relevant elements.
 
 Once the whole word is revealed so is its meaning.
 
