@@ -6,18 +6,18 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class ScrapeRandomWord {
+public class Scraper {
 
   private String url;
   private String randomWord;
   private String randomWordMeaning;
   private Document doc;
 
-  public ScrapeRandomWord() {
+  public Scraper() {
     this.url = "https://www.randomword.com";
   }
 
-  public ScrapeRandomWord(String url) {
+  public Scraper(String url) {
     this.url = url;
   }
 

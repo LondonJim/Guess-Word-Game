@@ -12,13 +12,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class ScrapeRandomWordTest {
+public class ScraperTest {
 
     @Test public void testgetWordReturnsString() {
       Document document = Jsoup.parse("<html><head></head><body><div id='random_word'>test</div></body><html>");
-      ScrapeRandomWord scrapeRandomWordMock = spy(ScrapeRandomWord.class);
-      when(scrapeRandomWordMock.getDocumentHelper()).thenReturn(document);
-      scrapeRandomWordMock.execute();
-      assertEquals("test", scrapeRandomWordMock.getRandomWord());
+      Scraper scraperMock = spy(Scraper.class);
+      when(scraperMock.getDocumentHelper()).thenReturn(document);
+      scraperMock.execute();
+      assertEquals("test", scraperMock.getRandomWord());
     }
 }

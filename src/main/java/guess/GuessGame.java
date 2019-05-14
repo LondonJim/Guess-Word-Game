@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 
 public class GuessGame {
 
-  private ScrapeRandomWord scrapeRandomWord;
+  private Scraper scraper;
   private Check check;
   private char guessChar;
   private String randomWord;
@@ -32,12 +32,12 @@ public class GuessGame {
   public GuessGame() throws IOException {
   }
 
-  public GuessGame(ScrapeRandomWord scrapeRandomWord) throws IOException {
-    this.scrapeRandomWord = scrapeRandomWord;
+  public GuessGame(Scraper scraper) throws IOException {
+    this.scraper = scraper;
   }
 
   public void newGame() throws IOException {
-    this.scrapeRandomWord = new ScrapeRandomWord();
+    this.scraper = new Scraper();
     getConvertWord();
     check = new Check(randomWord);
     frame = new JFrame("Word Game");
@@ -123,9 +123,9 @@ public class GuessGame {
   }
 
   private void getConvertWord() {
-    scrapeRandomWord.execute();
-    randomWordMeaning = scrapeRandomWord.getRandomWordMeaning();
-    randomWord = scrapeRandomWord.getRandomWord();
+    scraper.execute();
+    randomWordMeaning = scraper.getRandomWordMeaning();
+    randomWord = scraper.getRandomWord();
   }
 
   private void removeListener() {
